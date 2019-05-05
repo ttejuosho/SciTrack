@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="text-danger">Coordinator List</h1>
+<%= link_to "Add New Coordinator", new_coordinator_path %>
+<table class="table table-striped">
+<thead>
+<th>Coordinator Name</th>
+<th>Coordinator Email</th>
+<th>Coordinator Phone Number</th>
+<th>Options</th>
+</thead>
+  <% @coordinators.each do |coordinator| %>
+  <tr>
+    <td><%= coordinator.name %></td>
+    <td><%= coordinator.email %></td>
+    <td><%= coordinator.phone_number %></td>
+    <td>
+    <%= link_to "Edit Info", edit_coordinator_path(coordinator) %>
+    <%= link_to "Remove", coordinator, method: :delete, data: { confirm: "Are you sure you want to delete this coordinator?" } %>
+    </td>
+  </tr>
+    <% end %>
+</table>
+</div>

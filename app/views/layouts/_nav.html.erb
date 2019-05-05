@@ -9,7 +9,8 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="#">Sci-Track</a>
+<%# <a class="navbar-brand" href="#">Sci-Track</a> %>
+<%= link_to 'Sci-Track', registry_index_path, class: 'navbar-brand' %>
 </div>
 
 <!-- COLLAPSIBLE NAVBAR -->
@@ -17,9 +18,9 @@
 
 <!-- Links -->
 <ul class="nav navbar-nav">
-<li class="active"><a href="#">Registries <span class="sr-only">(current)</span></a></li>
-<li><a href="#">Coordinators</a></li>
-<li><a href="#">Participants</a></li>
+<li class="active"><a href="/registry">Registries <span class="sr-only">(current)</span></a></li>
+<li><a href="/coordinator">Coordinators</a></li>
+<li><a href="/participant">Participants</a></li>
 </ul>
 
 <!-- Button -->

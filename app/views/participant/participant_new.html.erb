@@ -1,0 +1,43 @@
+<div class="container">
+<div class="col-lg-4 col-md-4 col-xs-10">
+<h1 class="text-info">Add New Participant</h1>
+  <form action="/participant" class="form-horizontal" method="POST" role="form">
+    <div class="form-group">
+      <label class="control-label" for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="email">Email</label>
+      <input type="text" class="form-control" name="email" id="email" required>
+    </div>
+    <div class="form-group">
+    <p style="margin-bottom: 0px;"><strong class="control-label text-bold" for="gender">Gender</strong></p>
+      <div class="radio-inline">
+        <label><input type="radio" name="gender" value="Male" checked>Male</label>
+      </div>
+      <div class="radio-inline">
+        <label><input type="radio" name="gender" value="Female">Female</label>
+      </div>
+    </div>
+        <div class="form-group">
+      <label class="control-label" for="date_of_birth">Date of Birth</label>
+      <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" required>
+      <small class="text-muted">format YYYY-MM-DD</small>
+    </div>
+    <div class="form-group">
+    <label class="control-label" for="phone_number">Phone Number</label>
+    <input type="tel" class="form-control" name="phone_number" id="phone_number" required>
+    </div>
+    <div class="form-group">
+    <p style="margin-bottom: 0px;"><strong class="control-label" for="method_of_contact">Method of Contact</strong></p>
+      <div class="radio-inline">
+        <label><input type="radio" name="method_of_contact" value="Email" checked>Email</label>
+      </div>
+      <div class="radio-inline">
+        <label><input type="radio" name="method_of_contact" value="Phone">Phone</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+</div>
+</div>

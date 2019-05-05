@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="text-danger">Registries</h1>
+<%= link_to "Add New Registry", new_registry_path %>
+<table class="table table-striped">
+<thead>
+<th>Registry Name</th>
+<th>Registry Location</th>
+<th>Registry State</th>
+<th>Options</th>
+</thead>
+  <% @registries.each do |registry| %>
+  <tr>
+    <td><%= registry.name %></td>
+    <td><%= registry.location %></td>
+    <td><%= registry.state %></td>
+    <td>
+    <%= link_to "Edit Info", edit_registry_path(registry) %>
+    <%= link_to "Remove", registry, method: :delete, data: { confirm: "Are you sure you want to delete this registry?" } %>
+    </td>
+  </tr>
+    <% end %>
+</table>
+</div>

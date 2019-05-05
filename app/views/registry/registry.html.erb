@@ -1,0 +1,17 @@
+<%= form_for @registry do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+</div>
+<div>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+</div>
+<div>
+  <%= f.submit %>
+</div>
+<% end %>
