@@ -1,5 +1,5 @@
 class CoordinatorController < ApplicationController
-    before_action :registry, only: [:show, :edit, :update, :destroy]
+    before_action :coordinator, only: [:show, :edit, :update, :destroy]
 #get all coordinators
 def index
     @coordinators = Coordinator.all

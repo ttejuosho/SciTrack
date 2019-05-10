@@ -30,7 +30,7 @@ class RegistryController < ApplicationController
     end
 #Edit registry
     def edit
-        @registry = Registry.find params[:id]
+        @registry = Registry.find(params[:id])
     end
 #Update registry information
     def update
@@ -45,11 +45,11 @@ class RegistryController < ApplicationController
     def destroy
         @registry = Registry.find(params[:id])
         @registry.destroy
-        redirect_to registries_path
+        redirect_to registry_path
     end
     
   private
     def registry_params
-      params.permit(:name, :location, :state)
+      params.require(:registry).permit(:name, :location, :state)
     end
 end
