@@ -1,17 +1,21 @@
+<div class="container">
+<div class="col-lg-4 col-md-4 col-xs-10">
 <%= form_for @coordinator do |f| %>
 <div>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class:"form-control form-control-sm", name:"name" %>
 </div>
 <div>
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, class:"form-control form-control-sm", name:"email" %>
 </div>
 <div>
   <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
+  <%= f.text_field :phone_number, class:"form-control form-control-sm", name:"phone_number" %>
 </div>
 <div>
-  <%= f.submit %>
+  <%= f.submit :Update, class:"btn btn-sm btn-success" %>
 </div>
 <% end %>
+</div>
+</div>
