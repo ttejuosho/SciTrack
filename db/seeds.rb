@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#registries = Registry.create([
-#    { name: 'Cancer Study', location: 'Chicago', state: 'Open' }, 
-#    { name: 'Fetus Study', location: 'Evanston', state: 'Closed' } ])
+
+registries = Registry.create([
+   { name: 'Cancer Study', location: 'Chicago', state: 'Open' }, 
+   { name: 'Fetus Study', location: 'Evanston', state: 'Closed' } ])
 
 # coordinators = Coordinator.create!([
 #     {
@@ -17,16 +18,17 @@
 #     }
 # ])
 
-participants = Participant.create!([
-    {
-        name: "John Appleseed",
-        email: "johnappleseed@outlook.com",
-        gender: "male",
-        date_of_birth: 19540805,
-        phone_number: 8157456621,
-        method_of_contact: "email",
-        remarks: "",
-        Coordinator: "Damon Chad"
-    }
-])
+# participants = Participant.create!([
+#     {
+#         name: "John Appleseed",
+#         email: "johnappleseed@outlook.com",
+#         gender: "male",
+#         date_of_birth: 19540805,
+#         phone_number: 8157456621,
+#         method_of_contact: "email",
+#         remarks: "",
+#         Coordinator: "Damon Chad"
+#     }
+# ])
 
+#USE rake db:seed to seed

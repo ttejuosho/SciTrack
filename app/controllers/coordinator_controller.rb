@@ -1,5 +1,5 @@
 class CoordinatorController < ApplicationController
-    before_action :coordinator, only: [:show, :edit, :update, :destroy]
+    #before_action :coordinator, only: [:show, :edit, :update, :destroy]
 #get all coordinators
 def index
     @coordinators = Coordinator.all
@@ -19,7 +19,10 @@ end
     end
 #Change Coordinator information
     def edit
-        @coordinator = Coordinator.find params[:id]
+        @coordinator = Coordinator.find(params[:id])
+        respond_to do |format|
+            format.html { render :coordinator_edit  }
+          end
     end
     #New coordinator form
     def new

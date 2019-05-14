@@ -1,5 +1,5 @@
 class RegistryController < ApplicationController
-    before_action :registry, only: [:show, :edit, :update, :destroy]
+    #before_action :registry, only: [:show, :edit, :update, :destroy]
 #Get all registries
     def index
         @registries = Registry.all
@@ -31,6 +31,9 @@ class RegistryController < ApplicationController
 #Edit registry
     def edit
         @registry = Registry.find(params[:id])
+        respond_to do |format|
+            format.html { render :registry_edit  }
+          end
     end
 #Update registry information
     def update

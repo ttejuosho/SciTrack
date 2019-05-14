@@ -1,0 +1,37 @@
+<%= form_for @participant do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</div>
+<div>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+</div>
+<div>
+  <%= f.label :date_of_birth %>
+  <%= f.text_field :date_of_birth %>
+</div>
+<div>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+</div>
+<div>
+  <%= f.label :method_of_contact %>
+  <%= f.text_field :method_of_contact %>
+</div>
+<div>
+  <%= f.label :remarks %>
+  <%= f.text_field :remarks %>
+</div>
+<div>
+  <%= f.label :Coordinator %>
+  <%= f.text_field :Coordinator %>
+</div>
+<div>
+  <%= f.submit %>
+</div>
+<% end %>

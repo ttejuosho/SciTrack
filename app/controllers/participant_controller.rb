@@ -1,5 +1,5 @@
 class ParticipantController < ApplicationController
-    before_action :participant, only: [:show, :edit, :update, :destroy]
+    #before_action :participant, only: [:show, :edit, :update, :destroy]
     
     def index
         @participants = Participant.all
@@ -20,7 +20,10 @@ class ParticipantController < ApplicationController
     end
 #Edit participant information
     def edit
-        @participant = Participant.find params[:id]
+        @participant = Participant.find(params[:id])
+        respond_to do |format|
+            format.html { render :participant_edit  }
+          end
     end
 #Save participant in DB
     def create
