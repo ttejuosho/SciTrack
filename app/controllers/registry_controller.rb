@@ -7,13 +7,16 @@ class RegistryController < ApplicationController
 #Get a registry
     def show
         @registry = Registry.find(params[:id])
+        respond_to do |format|
+            format.html { render :registry_view  }
+        end
     end
 #New registry form
     def new
         @registry = Registry.new
         respond_to do |format|
             format.html { render :registry_new  }
-          end
+        end
     end
 #Save new registry to DB
     def create
@@ -26,20 +29,20 @@ class RegistryController < ApplicationController
               format.html { render :new }
               format.json { render json: @registry.errors, status: :unprocessable_entity }
             end
-          end
+        end
     end
 #Edit registry
     def edit
         @registry = Registry.find(params[:id])
         respond_to do |format|
             format.html { render :registry_edit  }
-          end
+        end
     end
 #Update registry information
     def update
         @registry = Registry.find(params[:id])
         if @registry.update(registry_params)
-            redirect_to registries_path
+            redirect_to registry_path
         else
             render :registry_edit
         end
@@ -53,6 +56,6 @@ class RegistryController < ApplicationController
     
   private
     def registry_params
-      params.require(:registry).permit(:name, :location, :state)
+      params.permit(:name, :location, :state)
     end
 end

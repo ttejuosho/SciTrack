@@ -9,8 +9,8 @@
 <th>Options</th>
 </thead>
   <% @registries.each do |registry| %>
-  <tr>
-    <td><%= registry.name %></td>
+  <tr> 
+    <td><%= link_to registry.name, registry_path(registry) %></td>
     <td><%= registry.location %></td>
     <td><%= registry.state %></td>
     <td>
