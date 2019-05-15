@@ -1,21 +1,24 @@
 class CoordinatorController < ApplicationController
     #before_action :coordinator, only: [:show, :edit, :update, :destroy]
-#get all coordinators
-def index
-    @coordinators = Coordinator.all
-    respond_to do |format|
-        format.html { render :coordinator  }
-      end
-end
-
-    def show
+    #get all coordinators
+    def index
         @coordinators = Coordinator.all
-        render json: @coordinators
+        respond_to do |format|
+            format.html { render :coordinator  }
+        end
     end
+
+    # def show
+    #     @coordinators = Coordinator.all
+    #     render json: @coordinators
+    # end
 
 #get coordinators for a registry
     def show
-        @coordinators = Coordinator.find(params[:coordinator])
+        @coordinator = Coordinator.find(params[:id])
+        respond_to do |format|
+            format.html { render :coordinator_view  }
+        end
     end
 #Change Coordinator information
     def edit
@@ -43,5 +46,10 @@ end
               format.json { render json: @coordinator.errors, status: :unprocessable_entity }
             end
           end
+    end
+
+    private
+    def coordinator_params
+      params.permit(:name, :email, :phone_number)
     end
 end
