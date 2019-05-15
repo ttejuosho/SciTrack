@@ -1,5 +1,4 @@
 class ParticipantController < ApplicationController
-    #before_action :participant, only: [:show, :edit, :update, :destroy]
     
     def index
         @participants = Participant.all

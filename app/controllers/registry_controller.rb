@@ -1,5 +1,4 @@
 class RegistryController < ApplicationController
-    #before_action :registry, only: [:show, :edit, :update, :destroy]
 #Get all registries
     def index
         @registries = Registry.all
