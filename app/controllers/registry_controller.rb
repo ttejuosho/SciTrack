@@ -50,7 +50,7 @@ class RegistryController < ApplicationController
     def destroy
         @registry = Registry.find(params[:id])
         @registry.destroy
-        redirect_to registry_path
+        redirect_to registry_index_path
     end
     
   private

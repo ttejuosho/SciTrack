@@ -1,4 +1,4 @@
 class Registry < ApplicationRecord
-    has_many :coordinator
-    has_many :participant
+    has_many :coordinators
+    has_many :participants, :through => :coordinators
 end
