@@ -1,18 +1,27 @@
 class ParticipantController < ApplicationController
-    
+ #get all participants   
     def index
         @participants = Participant.all
         respond_to do |format|
             format.html { render :participant  }
           end
     end
-#get all participants for a coordinator
+#get 1 participant
     def show
         @participant = Participant.find(params[:id])
         respond_to do |format|
             format.html { render :participant_view  }
         end
     end
+
+# #get all participants for a coordinator
+def show_participants
+    @participant = Participant.find(params[:id])
+    respond_to do |format|
+        format.html { render :participant  }
+    end
+end
+
 #Create a new participant form
     def new
         @participant = Participant.new
@@ -43,25 +52,29 @@ class ParticipantController < ApplicationController
         end
     end
 
-    #Update registry information
+    #Update participant information
     def update
         @participant = Participant.find(params[:id])
         if @participant.update(participant_params)
-            redirect_to participant_view_path
+            redirect_to participant_path
         else
             render :participant_edit
         end
     end
 
-    #delete registry
+    #delete participant
     def destroy
         @participant = Participant.find(params[:id])
         @participant.destroy
-        redirect_to participant_path
+        redirect_to participant_index_path
+    end
+
+    def participant_param
+        params.require(:participant).permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinator_id)
     end
 
     private
     def participant_params
-      params.permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :Coordinator)
+      params.permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinator_id)
     end
 end

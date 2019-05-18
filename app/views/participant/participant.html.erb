@@ -10,7 +10,6 @@
 <th>Phone Number</th>
 <th>Method of Contact</th>
 <th>Remarks</th>
-<th>Coordinator</th>
 <th>Options</th>
 </thead>
   <% @participants.each do |participant| %>
@@ -22,7 +21,7 @@
                 <td><%= participant.phone_number %></td>
                     <td><%= participant.method_of_contact %></td>
                         <td><%= participant.remarks %></td>
-                            <td><%= participant.Coordinator %></td>
+                            
     <td>
     <%= link_to "Edit Info", edit_participant_path(participant) %>
     <%= link_to "Remove", participant, method: :delete, data: { confirm: "Are you sure you want to delete this participant?" } %>
