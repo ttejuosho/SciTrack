@@ -1,6 +1,6 @@
 <div class="container">
-<div class="col-lg-4 col-md-4 col-xs-10">
 <h1 class="text-info">Add New Coordinator</h1>
+<div class="col-lg-4 col-md-4 col-xs-10">
   <form action="/coordinator" class="form-horizontal" method="POST" role="form">
     <div class="form-group">
       <label class="control-label" for="name">Coordinator Name</label>
@@ -15,6 +15,7 @@
     <input type="tel" class="form-control" name="phone_number" id="phone_number" required>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
+    <%= link_to 'Coordinators Table' ,{:action => 'index'} %>
   </form>
 </div>
 </div>
