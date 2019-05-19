@@ -1,6 +1,9 @@
 <div class="container">
 <h1 class="text-danger">Coordinator List</h1>
 <%= link_to "Add New Coordinator", new_coordinator_path %>
+<% if @coordinators.blank? %>
+<p>There are no coordinators in our system at the moment.</p>
+<% else %>
 <table class="table table-striped">
 <thead>
 <th>Coordinator Name</th>
@@ -10,7 +13,7 @@
 </thead>
   <% @coordinators.each do |coordinator| %>
   <tr>
-    <td><%= link_to coordinator.name, coordinator_path(coordinator) %></td>
+    <td><%= link_to @participant.coordinators_id.name, :action => "show_participants" , :id => @participant.coordinators_id.id %></td>
     <td><%= coordinator.email %></td>
     <td><%= coordinator.phone_number %></td>
     <td>
@@ -20,4 +23,5 @@
   </tr>
     <% end %>
 </table>
+ <% end %>
 </div>
