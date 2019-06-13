@@ -11,9 +11,15 @@
 </div>
 <div>
   <%= f.label :state %>
-  <%= f.text_field :state, class:"form-control form-control-sm", name:"state" %>
+  <%
+=begin%>
+ <%= f.text_field :state, class:"form-control form-control-sm", name:"state" %> 
+<%
+=end%>
+  <%= f.collection_select :id, Registry.all, :id, :state, {class:'form-control form-control-sm'} %>
 </div>
 <div>
+<hr />
   <%= f.submit :Update, class:"btn btn-sm btn-success" %>
 </div>
 <% end %>
