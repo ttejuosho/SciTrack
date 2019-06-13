@@ -18,7 +18,7 @@ class ParticipantController < ApplicationController
 def show_participants
     @participant = Participant.find(params[:id])
     respond_to do |format|
-        format.html { render :participant  }
+        format.html { render :participants  }
     end
 end
 
@@ -70,11 +70,11 @@ end
     end
 
     def participant_param
-        params.require(:participant).permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinator_id)
+        params.require(:participant).permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinators_id)
     end
 
     private
     def participant_params
-      params.permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinator_id)
+      params.permit(:name, :email, :gender, :date_of_birth, :phone_number, :method_of_contact, :remarks, :coordinators_id)
     end
 end
